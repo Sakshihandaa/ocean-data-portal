@@ -51,6 +51,7 @@ const NAV = [
   { label: "Remote Sensing", href: "/remote-sensing" },
   { label: "Advisories", href: "/advisories" },
   { label: "Real-time Data", href: "/realtime" },
+  { label: "Updates", href: "/updates" },
 ];
 
 export default function Header({
@@ -369,7 +370,7 @@ function SearchBox({
       >
         <Command shouldFilter={false}>
           <CommandInput
-            placeholder="Try “sea surface temperature”"
+            placeholder='Try "sea surface temperature"'
             value={value}
             onValueChange={onValueChange}
           />
@@ -382,7 +383,7 @@ function SearchBox({
                     value={value}
                     onSelect={() => handleSelect(value)}
                   >
-                    Search “{value}”
+                    Search "{value}"
                   </CommandItem>
                 </CommandGroup>
                 <CommandSeparator />
