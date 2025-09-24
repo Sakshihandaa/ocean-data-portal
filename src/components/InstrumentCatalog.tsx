@@ -806,10 +806,15 @@ function InstrumentCard({
       {/* remove image cover — text-only card */}
       <CardHeader className="space-y-1">
         <CardTitle className="text-base leading-tight break-words">{instrument.name}</CardTitle>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <span className="truncate">{instrument.type}</span>
-          <span aria-hidden="true">•</span>
-          <span className="truncate">{instrument.location}</span>
+        <div className="grid gap-0.5 text-sm">
+          <div className="text-muted-foreground">
+            <span className="text-foreground/80 font-medium">Type: </span>
+            <span className="break-words">{instrument.type}</span>
+          </div>
+          <div className="text-muted-foreground">
+            <span className="text-foreground/80 font-medium">Location: </span>
+            <span className="break-words">{instrument.location}</span>
+          </div>
         </div>
       </CardHeader>
       <CardContent>
