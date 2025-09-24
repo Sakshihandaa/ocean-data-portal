@@ -716,13 +716,13 @@ function FilterSections({
     <div className="space-y-6">
       <div className="space-y-3">
         <Label className="text-sm font-semibold">Categories</Label>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {categories.map((c) => {
             const checked = selectedCategories.has(c);
             return (
               <label
                 key={c}
-                className={`flex items-start gap-2 rounded-md border px-3 py-2 cursor-pointer min-w-0 overflow-hidden ${
+                className={`flex items-center gap-3 rounded-md border px-3 py-2.5 cursor-pointer w-full min-w-0 overflow-hidden transition-colors focus-within:ring-2 focus-within:ring-ring hover:bg-accent/60 ${
                   checked ? "bg-accent/80 border-primary" : "bg-card border-border"
                 }`}
               >
@@ -747,7 +747,7 @@ function FilterSections({
             return (
               <label
                 key={opt.value}
-                className={`flex items-center gap-2 rounded-md border px-3 py-2 cursor-pointer ${
+                className={`flex items-center gap-3 rounded-md border px-3 py-2.5 cursor-pointer w-full min-w-0 overflow-hidden transition-colors focus-within:ring-2 focus-within:ring-ring hover:bg-accent/60 ${
                   checked ? "bg-accent/80 border-primary" : "bg-card border-border"
                 }`}
               >
@@ -755,8 +755,9 @@ function FilterSections({
                   checked={checked}
                   onCheckedChange={() => onToggleStatus(opt.value)}
                   aria-label={opt.label}
+                  className="shrink-0"
                 />
-                <span className="inline-flex items-center gap-2 text-sm">
+                <span className="inline-flex flex-1 min-w-0 items-center gap-2 text-sm leading-snug text-foreground whitespace-normal break-words hyphens-auto">
                   <span className={`h-2.5 w-2.5 rounded-full ${opt.tone}`} />
                   {opt.label}
                 </span>
