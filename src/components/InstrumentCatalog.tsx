@@ -803,13 +803,7 @@ function InstrumentCard({
       }}
       aria-label={`${instrument.name} details`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={instrument.imageUrl}
-          alt=""
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-      </div>
+      {/* remove image cover — text-only card */}
       <CardHeader className="space-y-1">
         <CardTitle className="text-base leading-tight break-words">{instrument.name}</CardTitle>
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -866,14 +860,8 @@ function InstrumentRow({
       className="flex items-stretch gap-4 rounded-xl border bg-card border-border hover:shadow-sm transition-shadow"
       aria-label={`${instrument.name} details`}
     >
-      <div className="relative w-40 aspect-[4/3] shrink-0 overflow-hidden rounded-l-xl">
-        <img
-          src={instrument.imageUrl}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-      </div>
-      <div className="flex-1 min-w-0 py-3 pr-3">
+      {/* remove thumbnail — text-only row */}
+      <div className="flex-1 min-w-0 px-3 py-3">
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <h3 className="text-base font-semibold leading-tight break-words">{instrument.name}</h3>
           <div className="flex items-center gap-2">
