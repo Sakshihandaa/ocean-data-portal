@@ -722,7 +722,7 @@ function FilterSections({
             return (
               <label
                 key={c}
-                className={`flex items-center gap-2 rounded-md border px-3 py-2 cursor-pointer min-w-0 ${
+                className={`flex items-start gap-2 rounded-md border px-3 py-2 cursor-pointer min-w-0 overflow-hidden ${
                   checked ? "bg-accent/80 border-primary" : "bg-card border-border"
                 }`}
               >
@@ -730,8 +730,9 @@ function FilterSections({
                   checked={checked}
                   onCheckedChange={() => onToggleCategory(c)}
                   aria-label={c}
+                  className="shrink-0"
                 />
-                <span className="text-sm truncate">{c}</span>
+                <span className="text-sm flex-1 min-w-0 break-words whitespace-normal hyphens-auto leading-snug text-foreground">{c}</span>
               </label>
             );
           })}
